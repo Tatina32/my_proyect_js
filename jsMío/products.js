@@ -88,6 +88,9 @@ function createProductCardCombination(product) {
 }*/
 
 
+
+
+
 function getProductsFromLocalStorage() {
 	const cartFromLocalStorage = localStorage.getItem("cart");
 	if (cartFromLocalStorage) {
