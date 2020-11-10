@@ -1,5 +1,5 @@
-
-
+/*
+//Encuenta para clientes 
 var encuesta =Number(prompt("¿Dinos el número de paises que has visitado en todo el Mundo?")) ;
 
   switch (encuesta){
@@ -55,19 +55,16 @@ var promptContinente = prompt("Qué continente que has visitado te ha gustado m�
 
 for(var c = 0; c < arrayContinente.length; c++){
     
-/*/farma1
+ //farma1
     if(arrayContinente[c].continente.toLocaleLowerCase().indexOf(promptContinente.toLocaleLowerCase())){
           alert('Gracias por contestar a nuestra encuenta,' + 'me alegro que hayas disfrutado de ' + promptContinente);
-    }*/
+    }
 
    //forma2 
     if(arrayContinente[c].continente.toLocaleLowerCase().includes(promptContinente.toLocaleLowerCase())){
           alert('Gracias por contestar a nuestra encuenta,' + 'me alegro que hayas disfrutado de ' + promptContinente);
   }
 }
-
-
-
 
 
 function CarritoCompra(compra){
@@ -106,10 +103,6 @@ function Compra(cantidad, producto, precio, totales){
  
 }
 
-// falta sumar el total individual y total de la compra 
-
-
-
 var carritoCompra = new CarritoCompra();
 
 
@@ -134,4 +127,102 @@ var compra5 = new Compra(1, "FotoEuropa1", 12);
 compra5.agrgarAlCarrito(carritoCompra);
 
 console.log(carritoCompra.compra);
-console.log(totales);
+console.log(totales);*/
+
+
+//Formulario
+
+function ValidarNombreApellido(evento){
+    var inputNombreApellido = evento.target.value;
+    if(inputNombreApellido.length < 10){
+        console.log("El nombre de usuario debe tener al menos 10 caracteres");
+    } else console.log("Perfecto");
+    }
+    
+function ValidarMail(evento){
+        var inputMail = evento.target.value;
+        if(inputMail.length < 10){
+            console.log("El Mail debe tener al menos 10 caracteres");
+        } else console.log("Perfecto");
+        }
+
+function ValidarComentario(evento){
+        var inputComentario = evento.target.value;
+        if(inputComentario.length < 30){
+            console.log("El comentario debe tener al menos 30 caracteres");
+        } else console.log("Perfecto");
+        }
+
+function capturarEnterFormulario(event) {
+            if (event.which == 13 || event.keyCode == 13) { 
+         alert("El comentario debe tener al menos 20 caracteres");        
+             }
+         }
+        
+    /*window.onload = function() {
+            document.getElementById("cambiaBorde").onmouseover = resalta;
+            document.getElementById("cambiaBorde").onmouseout = resalta;
+        
+            document.getElementById('boton').addEventListener('click', cambiarColorContenedor);
+            document.getElementById('boton').addEventListener('click', cambiarColorBody);
+            
+            document.getElementById('cambiaBoton').onmouseover = resaltaColor;
+            document.getElementById('cambiaBoton').onmouseout = resaltaColor;
+            
+          }
+          
+          function resalta(elEvento) {
+            var evento = elEvento;
+            switch(evento.type) {
+              case 'mouseover':
+                this.style.borderColor = 'red';
+                break;
+              case 'mouseout':
+                this.style.borderColor = 'green';
+                break;
+            }
+          }
+        
+        function cambiarColorContenedor(evento){
+            evento.stopPropagation();
+            document.getElementById("contenedor").style.background ="violet";
+        }
+        
+        function cambiarColorBody(){
+            document.body.style.background = "salmon";
+
+        }
+
+        
+        function resaltaColor(elEvento) {
+            var evento = elEvento;
+            switch(evento.type) {
+              case 'mouseover':
+                this.style.background = 'yellow';
+                break;
+              case 'mouseout':
+                this.style.color = 'blue';
+                break;
+            }
+          }
+        
+
+        
+        
+
+function contraseña(event){
+    var value = event.target.value;
+    if(value.length < 8){
+        var p = document.createElement('p');
+        var main = document.getElementById('main');
+        p.innerHTML = 'Ingresar una contraseña de mas de 8 caracteres';
+        main.appendChild(p);
+        console.log(p)
+    }
+}
+
+function capturarEnter(event) {
+    if (event.which == 13 || event.keyCode == 13) { 
+ alert("A continuacion puedes terminar tu compra, Gracias por confiar en nosotros");        
+     }
+ }*/
