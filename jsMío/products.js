@@ -21,7 +21,7 @@ function createProductCardCombination(product) {
 	productCard.classList ="productCard  col-lg-4 col-md-6 col-xs-12 p-5 d-flex flex-column align-items-center justify-items-center aling-text-center";
 
 	let code = `
-			<div>${[product.name]}</div><br>
+			<div class="aling-text-center"><h4>${[product.name]}</h4></div><br>
 			<img src='${product.img}', width="250" height="250"/><br>
 			<div>Precio : $${[product.price]}</div>
 			
@@ -31,7 +31,7 @@ function createProductCardCombination(product) {
 	button.addEventListener('mouseover', cambiarColorBoton);
 	button.addEventListener('mouseout', cambiarAlSalir);
 	button.addEventListener('mouseout', cambiaBorde )
-	button.innerHTML = "Agregar al carrito";
+	button.innerHTML = "Añadir al carrito";
 	function cambiarColorBoton(evento){
 		evento.target.style.background = "violet";
 	}
@@ -67,6 +67,7 @@ function getProductsFromLocalStorage() {
 				object.img,
 			);
 			cart.push(product);
+			document.write(objectsFromLocalStorage)
 		});
 	} else {
 		console.log("ENTRAMOS AL ELSE");

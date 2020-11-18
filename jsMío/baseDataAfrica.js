@@ -8,7 +8,7 @@ class Product {
 }
 
 function getProducts() {
-	let productsAsObjects = JSON.parse(DATA_FROM_DATABASE);
+	let productsAsObjects = JSON.parse(DATABASE);
 	let products = productsAsObjects.map(
 		(value) => new Product(value.id, value.name, value.price, value.img)
 	);
@@ -16,65 +16,65 @@ function getProducts() {
 	return products;
 }
  
-const DATA_FROM_DATABASE = `[{
+const DATABASE = `[{
     "id": 1,
-    "name": "Amanecer en el Desierto de Zagora - África_1",
+    "name": "Amanecer en el Desierto de Zagora <br>Marrakech",
     "price": 15,
     "img": "../img/amanecerCamping.jpg"
   }, {
     "id": 2,
-    "name": "Artesania Marroquí - África_2",
+    "name": "Música Marroquí<br>",
     "price": 10,
-    "img": "../img/artesaniaMarroqui.jpg"
+    "img": "../img/musicaMarroqui.jpg"
   }, {
     "id": 3,
-    "name": "Domar Dromedario - África_3",
+    "name": "Domar Dromedario <br>Marrakech",
     "price": 12,
     "img": "../img/BocaDromedario.jpg"
   }, {
     "id": 4,
-    "name": "Dromedario - África_4",
+    "name": "Dromedario <br>Marrakech ",
     "price": 13,
     "img": "../img/dromedario-Marrakech.jpg"
   }, {
     "id": 5,
-    "name": " Faraón- África_5",
+    "name": " Faraón <br>Egipto",
     "price": 12,
     "img": "../img/Expo-Egipto.jpg"
   }, {
     "id": 6,
-    "name": "Mural Egipcio - África_6",
+    "name": "Mural Egipcio <br>Egipto",
     "price": 10,
     "img": "../img/mural-Egipto.jpg"
   }, {
     "id": 7,
-    "name": " Paseo en Dromedario - África_7",
+    "name": " Paseo en Dromedario <br>Marrakech",
     "price": 10,
     "img": "../img/paseoDromedario.jpg"
   }, {
     "id": 8,
-    "name": " Pueblos de Zagora - África_8",
+    "name": " Pueblo de Zagora <br>Marrakech",
     "price": 10,
     "img": "../img/puebloDeSahora.jpg"
   }, {
     "id": 9,
-    "name": " Tutankamon - África_9",
+    "name": " Tutankamon <br>Egipto",
     "price": 11,
     "img": "../img/Tutankamon-Egipto.jpg"
   }, {
     "id": 10,
-    "name": " - África_10",
+    "name": " Pueblos escondidos <br>Marrakech",
     "price": 10,
-    "img": "../img/.jpg"
+    "img": "../img/pueblosMarroquis.jpg"
   }, {
     "id": 11,
-    "name": " - África_11",
+    "name": "Arte <br>Marrakech",
     "price": 8,
-    "img": "../img/.jpg"
+    "img": "../img/cuadrosMarroqui.jpg"
   }, {
     "id": 12,
-    "name": " - África_12",
+    "name": " Dromedario hambriento <br>Marrakech",
     "price": 9,
-    "img": "../img/.jpg"
+    "img": "../img/BocaDromedario.jpg"
   }]
   `;

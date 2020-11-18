@@ -158,6 +158,12 @@ function capturarEnterFormulario(event) {
          alert("El comentario debe tener al menos 20 caracteres");        
              }
          }
+
+function validarEnviar(){
+  console.log($("#NombreApellido").val());
+    console.log($("#Mail").val());
+
+}
         
     /*window.onload = function() {
             document.getElementById("cambiaBorde").onmouseover = resalta;
