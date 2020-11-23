@@ -1,80 +1,59 @@
-class Product {
-	constructor(id, name, price, img) {
-		this.name = name;
-		this.id = id;
-		this.price = price;
-		this.img = img;
-	}
+var cart
+
+if (localStorage.getItem('cart')) {
+    cart = JSON.parse(localStorage.getItem('cart'))
+} else {
+    cart = []
 }
 
-function getProducts() {
-	let productsAsObjects = JSON.parse(DATABASE);
-	let products = productsAsObjects.map(
-		(value) => new Product(value.id, value.name, value.price, value.img)
-	);
 
-	return products;
-}
- 
-const DATABASE = `[{
-    "id": 1,
-    "name": "Continente Asiático <br> ",
-    "price": 15,
-    "img": "../img/Banderas.jpg"
-  }, {
-    "id": 2,
-    "name": "Blue Temple  <br> Thailandia",
-    "price": 10,
-    "img": "../img/blueTemple.jpg"
-  }, {
-    "id": 3,
-    "name": "Buda <br>  Thailandia",
-    "price": 12,
-    "img": "../img/buda-Thailandia.jpg"
-  }, {
-    "id": 4,
-    "name": "Elefantes <br> Thailandia ",
-    "price": 13,
-    "img": "../img/caraElefante.jpg"
-  }, {
-    "id": 5,
-    "name": "Decoraciones Thailandesa <br> ",
-    "price": 12,
-    "img": "../img/decoracion-Thailandesa.jpg"
-  }, {
-    "id": 6,
-    "name": "Elefantes en su hábitat <br> Thailandia ",
-    "price": 10,
-    "img": "../img/elefanteEnEstadoPuro.jpg"
-  }, {
-    "id": 7,
-    "name": "Isla Kho Thao <br> Thailandia",
-    "price": 10,
-    "img": "../img/islaKhoThao-Thailandia.jpg"
-  }, {
-    "id": 8,
-    "name": "Mujeres Jirafa <br> Thailandia",
-    "price": 10,
-    "img": "../img/mujerJirafaThailandesa.jpg"
-  }, {
-    "id": 9,
-    "name": "Jardines del Templo <br> Thailandia",
-    "price": 11,
-    "img": "../img/PaisajeBudista.jpg"
-  }, {
-    "id": 10,
-    "name": "Rezo Budista <br> Thailandia",
-    "price": 10,
-    "img": "../img/rezoBudista-Thailandia.jpg"
-  }, {
-    "id": 11,
-    "name": "Templos <br> Thailandia",
-    "price": 8,
-    "img": "../img/templo-Thailandia.jpg"
-  }, {
-    "id": 12,
-    "name": "Tribu Thailandesa <br> ",
-    "price": 9,
-    "img": "../img/tribuThailandesa.jpg"
-  }]
-  `;
+var productos = [{
+  "productId": 1, "productName": "Continente Asiático <br> ", "productPrice": 15, "productImage": "../img/Banderas.JPG"}, 
+  {"productId": 2, "productName": "Blue Temple  <br> Thailandia", "productPrice": 10, "productImage": "../img/blueTemple.JPG"}, 
+  {"productId": 3, "productName": "Buda <br>  Thailandia", "productPrice": 12, "productImage": "../img/buda-Thailandia.JPG"}, 
+  {"productId": 4, "productName": "Elefantes <br> Thailandia ", "productPrice": 13, "productImage": "../img/caraElefante.JPG"}, 
+  {"productId": 5, "productName": "Decoraciones Thailandesa <br> ", "productPrice": 12, "productImage": "../img/decoracion-Thailandesa.JPG"}, 
+  {"productId": 6, "productName": "Elefantes en su hábitat <br> Thailandia ", "productPrice": 10, "productImage": "../img/elefanteEnEstadoPuro.JPG"}, 
+  {"productId": 7, "productName": "Isla Kho Thao <br> Thailandia", "productPrice": 10, "productImage": "../img/islaKhoThao-Thailandia.jpg"}, 
+  {"productId": 8, "productName": "Mujeres Jirafa <br> Thailandia", "productPrice": 10, "productImage": "../img/mujerJirafaThailandesa.JPG"}, 
+  {"productId": 9, "productName": "Jardines del Templo <br> Thailandia", "productPrice": 11, "productImage": "../img/PaisajeBudista.JPG"}, 
+  {"productId": 10, "productName": "Rezo Budista <br> Thailandia", "productPrice": 10,  "productImage": "../img/rezoBudista-Thailandia.JPG"}, 
+  {"productId": 11, "productName": "Templos <br> Thailandia", "productPrice": 8, "productImage": "../img/templo-Thailandia.JPG"}, 
+  {"productId": 12, "productName": "Tribu Thailandesa <br> ", "productPrice": 9, "productImage": "../img/tribuThailandesa.JPG"
+}]
+
+var containerProduct = $('.productContainer')
+
+productos.forEach(function (producto) {
+    containerProduct.append(`
+    <div class=" ${producto.productId} col-lg-4 col-md-6 col-xs-12  p-5 d-flex flex-column align-items-center justify-items-center aling-text-center">
+    
+        <h2 style="text-align: center">${producto.productName}</h2>
+        <img src=${producto.productImage}  width="250" height="250"> <br>
+        <p>Precio: $ ${producto.productPrice}</p>
+        <div style="display: flex; justify-content: space-between; ">
+            <button onclick="Sumar()" style="background: olivedrab; " class="btn-sm">+</button>
+            <h4 id="contador">0</h4>
+            <button onclick="Restar()" style="background: olivedrab; " class="btn-sm">-</button>
+         </div><br>
+        <button class="btnAdd btn-lg" style="border:2px; background: olivedrab;" id="${producto.productId}"> Agregar </button>
+        
+    </div>
+    `)
+})
+
+var btnAdd = $('.btnAdd')
+
+btnAdd.click(function (e) {
+    productos.forEach(function (producto) {
+        if (producto.productId == $(e.target).attr('id')) {
+            cart.push(producto)
+            localStorage.setItem('cart', JSON.stringify(cart))
+            console.log(cart)
+            $(e.target).addClass('btnAgregado')
+        }
+    })
+})
+
+
+

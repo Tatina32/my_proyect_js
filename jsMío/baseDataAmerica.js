@@ -1,80 +1,58 @@
-class Product {
-	constructor(id, name, price, img) {
-		this.name = name;
-		this.id = id;
-		this.price = price;
-		this.img = img;
-	}
+var cart
+
+if (localStorage.getItem('cart')) {
+    cart = JSON.parse(localStorage.getItem('cart'))
+} else {
+    cart = []
 }
 
-function getProducts() {
-	let productsAsObjects = JSON.parse(DATABASE);
-	let products = productsAsObjects.map(
-		(value) => new Product(value.id, value.name, value.price, value.img)
-	);
 
-	return products;
-}
- 
-const DATABASE = `[{
-    "id": 1,
-    "name": "Ciudad ecuatoriana <br>Baños",
-    "price": 15,
-    "img": "../img/BañosEcuador.jpg"
-  }, {
-    "id": 2,
-    "name": "Grietas  <br>Galápagos",
-    "price": 10,
-    "img": "../img/grietas-Galapagos.jpg"
-  }, {
-    "id": 3,
-    "name": "Isla Bartolomé  <br>Galápagos",
-    "price": 12,
-    "img": "../img/islaBartolomé-Galápagos.jpg"
-  }, {
-    "id": 4,
-    "name": "Tortugas <br>Galápagos",
-    "price": 13,
-    "img": "../img/Tortugas-Galápagos.jpg"
-  }, {
-    "id": 5,
-    "name": "Especies endémicas <br>Galápagos",
-    "price": 12,
-    "img": "../img/tortugaComiendo.jpg"
-  }, {
-    "id": 6,
-    "name": "Guacamayo <br>Puyo",
-    "price": 10,
-    "img": "../img/loro.jpg"
-  }, {
-    "id": 7,
-    "name": "Salinas <br>Galápagos",
-    "price": 10,
-    "img": "../img/salinas-Galápagos.jpg"
-  }, {
-    "id": 8,
-    "name": "Río Pastaza <br>Puyo",
-    "price": 10,
-    "img": "../img/ríoPastaza-Ecuador.jpg"
-  }, {
-    "id": 9,
-    "name": "Pinguinos <br>Galápagos",
-    "price": 11,
-    "img": "../img/pinguinos-Galápagos.jpg"
-  }, {
-    "id": 10,
-    "name": "Mono <br>Puyo",
-    "price": 10,
-    "img": "../img/Mono.jpg"
-  }, {
-    "id": 11,
-    "name": "Lobo Marino  <br>Galápagos",
-    "price": 8,
-    "img": "../img/loboMarino-SantaCruz.jpg"
-  }, {
-    "id": 12,
-    "name": "Iguana Marina<br>Galápagos",
-    "price": 9,
-    "img": "../img/iguanaMarina.jpg"
-  }]
-  `;
+var productos = [{
+  "productId": 1, "productName": "Ciudad ecuatoriana <br>Baños", "productPrice": 15, "productImage": "../img/BañosEcuador.jpg"}, 
+  {"productId": 2, "productName": "Grietas  <br>Galápagos", "productPrice": 10, "productImage": "../img/grietas-Galapagos.jpg"}, 
+  {"productId": 3, "productName": "Isla Bartolomé  <br>Galápagos", "productPrice": 12, "productImage": "../img/islaBartolomé-Galápagos.jpg"}, 
+  {"productId": 4, "productName": "Tortugas <br>Galápagos", "productPrice": 13, "productImage": "../img/Tortugas-Galápagos.jpg"}, 
+  {"productId": 5, "productName": "Especies endémicas <br>Galápagos", "productPrice": 12, "productImage": "../img/tortugaComiendo.jpg"}, 
+  {"productId": 6, "productName": "Guacamayo <br>Puyo", "productPrice": 10, "productImage": "../img/loro.jpg"}, 
+  {"productId": 7, "productName": "Salinas <br>Galápagos", "productPrice": 10, "productImage": "../img/salinas-Galápagos.jpg"}, 
+  {"productId": 8, "productName": "Río Pastaza <br>Puyo", "productPrice": 10, "productImage": "../img/ríoPastaza-Ecuador.jpg"}, 
+  {"productId": 9, "productName": "Pinguinos <br>Galápagos", "productPrice": 11, "productImage": "../img/pinguinos-Galápagos.jpg"}, 
+  {"productId": 10, "productName": "Mono <br>Puyo", "productPrice": 10, "productImage": "../img/Mono.jpg"}, 
+  {"productId": 11, "productName": "Lobo Marino  <br>Galápagos", "productPrice": 8, "productImage": "../img/loboMarino-SantaCruz.jpg"}, 
+  {"productId": 12, "productName": "Iguana Marina<br>Galápagos", "productPrice": 9, "productImage": "../img/iguanaMarina.jpg"
+}]
+
+var containerProduct = $('.productContainer')
+
+productos.forEach(function (producto) {
+    containerProduct.append(`
+    <div class=" ${producto.productId} col-lg-4 col-md-6 col-xs-12  p-5 d-flex flex-column align-items-center justify-items-center aling-text-center">
+    
+        <h2 style="text-align: center">${producto.productName}</h2>
+        <img src=${producto.productImage}  width="250" height="250"> <br>
+        <p>Precio: $ ${producto.productPrice}</p>
+        <div style="display: flex; justify-content: space-between; ">
+            <button onclick="Sumar()" style="background: olivedrab; " class="btn-sm">+</button>
+            <h4 id="contador">0</h4>
+            <button onclick="Restar()" style="background: olivedrab; " class="btn-sm">-</button>
+         </div><br>
+        <button class="btnAdd btn-lg" style="border:2px; background: olivedrab;" id="${producto.productId}"> Agregar </button>
+        
+    </div>
+    `)
+})
+
+var btnAdd = $('.btnAdd')
+
+btnAdd.click(function (e) {
+    productos.forEach(function (producto) {
+        if (producto.productId == $(e.target).attr('id')) {
+            cart.push(producto)
+            localStorage.setItem('cart', JSON.stringify(cart))
+            console.log(cart)
+            $(e.target).addClass('btnAgregado')
+        }
+    })
+})
+
+

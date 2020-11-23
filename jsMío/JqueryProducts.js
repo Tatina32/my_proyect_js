@@ -1,4 +1,4 @@
- // carrito producto
+
  
  var cart
 
@@ -12,10 +12,13 @@
  var productos = [
      { "productId": 1,  "productName": "Serpiente de envoltorios", "productImage": "../img/serpienteRciclada.jpg",  "productPrice": 15}, 
      { "productId": 2,  "productName": "Agenda de papel reciclado", "productImage": "../img/agendaPapel.jpg",  "productPrice": 10}, 
-     { "productId": 3,  "productName": "platos de fibra de bambu ", "productImage": "../img/setPlato.jpg",  "productPrice": 8 },
+     { "productId": 3,  "productName": "Platos de fibra de bambu ", "productImage": "../img/setPlato.jpg",  "productPrice": 8 },
       { "productId": 4,  "productName": "Muñeca con piezas", "productImage": "../img/muñecaReciclada.jpg",  "productPrice": 11 }, 
       { "productId": 5,  "productName": "Mariposa con piezas", "productImage": "../img/mariposaReciclado.jpg",  "productPrice": 10 }, 
-      { "productId": 6,  "productName": "Macetero hecho de envases", "productImage": "../img/maceteroReciclado.jpg",  "productPrice": 12}, 
+      { "productId": 6,  "productName": "Macetero hecho de envases", "productImage": "../img/maceteroReciclado.jpg",  "productPrice": 12},
+      { "productId": 7,  "productName": "Cuadro de piezas", "productImage": "../img/cuadroReciclado.jpg",  "productPrice": 9 }, 
+      { "productId": 8,  "productName": "Collar de vidio", "productImage": "../img/collarReciclado.jpg",  "productPrice": 14 }, 
+      { "productId": 9,  "productName": "Lapicero de disquet", "productImage": "../img/lapiceroReciclado.jpg",  "productPrice": 10}, 
      
  ]
  
@@ -26,13 +29,33 @@
      <div class=" ${producto.productId} col-lg-4 col-md-6 col-xs-12  p-5 d-flex flex-column align-items-center justify-items-center aling-text-center">
      
          <h2 style="text-align: center">${producto.productName}</h2>
-         <img src=${producto.productImage}  width="300" height="300"> <br>
+         <img src=${producto.productImage}  width="250" height="250"> <br>
          <p>Precio: $ ${producto.productPrice}</p>
-         <button class="btnAdd btn" id="${producto.productId}"> Agregar </button>
+         <div style="display: flex; justify-content: space-between; ">
+            <button onclick="Sumar()" style="background: olivedrab; " class="btn-sm">+</button>
+            <h4 id="contador">0</h4>
+            <button onclick="Restar()" style="background: olivedrab; " class="btn-sm">-</button>
+         </div><br>
+        <button class="btnAdd btn-lg" style="border:2px; background: olivedrab;" id="${producto.productId}"> Agregar </button>
      </div>
      `)
  })
  
+ var valor = 0;
+
+ function Sumar(){
+     var sumar = document.getElementById("contador");
+     valor++
+     sumar.innerHTML = valor;
+ }
+ function Restar(){
+     if(document.getElementById("contador").innerText  !== '0'){
+         var restar = document.getElementById("contador");
+         valor--
+         restar.innerHTML = valor;
+     }  
+ }
+
  var btnAdd = $('.btnAdd')
  
  btnAdd.click(function (e) {
@@ -52,13 +75,10 @@ var intervalo;
 
 $( document ).ready(function(){
     const parrafo = $("#parrafo");
-    const botonAgregar = $(".btn");
-
     alert("Estos productos tiene garantia de 3 meses, en el caso de ruptura.");
-
     parrafo.css({"font-weigth": "bold", "font-size": "20px", "color": "aqua", "text-aling": "center", "margin-left": "20px"}); 
 
-  botonAgregar.click(function(){
+   botonAgregar.click(function(){
       estado = !estado;
 
       if(estado){

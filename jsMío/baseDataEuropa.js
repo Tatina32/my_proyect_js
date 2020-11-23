@@ -1,80 +1,57 @@
-class Product {
-	constructor(id, name, price, img) {
-		this.name = name;
-		this.id = id;
-		this.price = price;
-		this.img = img;
-	}
+var cart
+
+if (localStorage.getItem('cart')) {
+    cart = JSON.parse(localStorage.getItem('cart'))
+} else {
+    cart = []
 }
 
-function getProducts() {
-	let productsAsObjects = JSON.parse(DATABASE);
-	let products = productsAsObjects.map(
-		(value) => new Product(value.id, value.name, value.price, value.img)
-	);
+var productos = [{
+  "productId": 1, "productName": "Vistas de Lisboa <br> ", "productPrice": 15, "productImage": "../img/vistas-Lisboa.jpg"}, 
+  {"productId": 2, "productName": " Torre Eiffel nocturna <br> Paris", "productPrice": 10, "productImage": "../img/torreEiffelNoche-Paris.jpg"}, 
+  {"productId": 3, "productName": "Torre de Belen <br> Lisboa", "productPrice": 12, "productImage": "../img/TorreDeBelen-Lisboa.jpg"}, 
+  {"productId": 4, "productName": "Arco del Triunfo  <br> Paris ", "productPrice": 13, "productImage": "../img/arcoDelTriunfo-Paris.jpg"}, 
+  {"productId": 5, "productName": "Atardecer  <br>Budapest ", "productPrice": 12, "productImage": "../img/atardecer-Budapest.jpg"}, 
+  {"productId": 6, "productName": "Antigua bodeda de Vino en Chinchon <br>Madrid", "productPrice": 10, "productImage": "../img/BodegaVino-Chinchon.jpg"}, 
+  {"productId": 7, "productName": "Auschwitz <br>Cracovia", "productPrice": 10, "productImage": "../img/Auschwitz-PoloniaCracovia.jpg"}, 
+  {"productId": 8, "productName": "Wroclaw<br>Polonia", "productPrice": 10, "productImage": "../img/calles-Wroclaw.jpg"}, 
+  {"productId": 9, "productName": " Jardines Palacio de Versalles <br>Francia", "productPrice": 11, "productImage": "../img/jardinesPalacioVersalles-Francia.jpg"}, 
+  {"productId": 10, "productName": "Lago de Covadonga en Asturias <br>Asturias", "productPrice": 10, "productImage": "../img/LagoDeCovadonga-Asturias.jpg"}, 
+  {"productId": 11, "productName": "Gran vía de Madrid <br>Madid", "productPrice": 8, "productImage": "../img/Madrid-Groumet.jpg"}, 
+  {"productId": 12, "productName": "Parlamento de Budapest <br>", "productPrice": 9, "productImage": "../img/Parlamento-Budapest.jpg"
+}]
 
-	return products;
-}
- 
-const DATABASE = `[{
-    "id": 1,
-    "name": "Vistas de Lisboa <br> ",
-    "price": 15,
-    "img": "../img/vistas-Lisboa.jpg"
-  }, {
-    "id": 2,
-    "name": " Torre Eiffel nocturna <br> Paris",
-    "price": 10,
-    "img": "../img/torreEiffelNoche-Paris.jpg"
-  }, {
-    "id": 3,
-    "name": "Torre de Belen <br> Lisboa",
-    "price": 12,
-    "img": "../img/TorreDeBelen-Lisboa.jpg"
-  }, {
-    "id": 4,
-    "name": "Arco del Triunfo  <br> Paris ",
-    "price": 13,
-    "img": "../img/arcoDelTriunfo-Paris.jpg"
-  }, {
-    "id": 5,
-    "name": "Atardecer  <br>Budapest ",
-    "price": 12,
-    "img": "../img/atardecer-Budapest.jpg"
-  }, {
-    "id": 6,
-    "name": "Antigua bodeda de Vino en Chinchon <br>Madrid",
-    "price": 10,
-    "img": "../img/BodegaVino-Chinchon.jpg"
-  }, {
-    "id": 7,
-    "name": "Auschwitz <br>Cracovia",
-    "price": 10,
-    "img": "../img/Auschwitz-PoloniaCracovia.jpg"
-  }, {
-    "id": 8,
-    "name": "Wroclaw<br>Polonia",
-    "price": 10,
-    "img": "../img/calles-Wroclaw.jpg"
-  }, {
-    "id": 9,
-    "name": " Jardines Palacio de Versalles <br>Francia",
-    "price": 11,
-    "img": "../img/jardinesPalacioVersalles-Francia.jpg"
-  }, {
-    "id": 10,
-    "name": "Lago de Covadonga en Asturias <br>Asturias",
-    "price": 10,
-    "img": "../img/LagoDeCovadonga-Asturias.jpg"
-  }, {
-    "id": 11,
-    "name": "Gran vía de Madrid <br>Madid",
-    "price": 8,
-    "img": "../img/Madrid-Groumet.jpg"
-  }, {
-    "id": 12,
-    "name": "Parlamento de Budapest <br>",
-    "price": 9,
-    "img": "../img/Parlamento-Budapest.jpg"
-  }]
-  `;
+var containerProduct = $('.productContainer')
+
+productos.forEach(function (producto) {
+    containerProduct.append(`
+    <div class=" ${producto.productId} col-lg-4 col-md-6 col-xs-12  p-5 d-flex flex-column align-items-center justify-items-center aling-text-center">
+    
+        <h2 style="text-align: center">${producto.productName}</h2>
+        <img src=${producto.productImage}  width="250" height="250"> <br>
+        <p>Precio: $ ${producto.productPrice}</p>
+        <div style="display: flex; justify-content: space-between; ">
+            <button onclick="Sumar()" style="background: olivedrab; " class="btn-sm">+</button>
+            <h4 id="contador">0</h4>
+            <button onclick="Restar()" style="background: olivedrab; " class="btn-sm">-</button>
+         </div><br>
+        <button class="btnAdd btn-lg" style="border:2px; background: olivedrab;" id="${producto.productId}"> Agregar </button>
+        
+    </div>
+    `)
+})
+
+var btnAdd = $('.btnAdd')
+
+btnAdd.click(function (e) {
+    productos.forEach(function (producto) {
+        if (producto.productId == $(e.target).attr('id')) {
+            cart.push(producto)
+            localStorage.setItem('cart', JSON.stringify(cart))
+            console.log(cart)
+            $(e.target).addClass('btnAgregado')
+        }
+    })
+})
+
+

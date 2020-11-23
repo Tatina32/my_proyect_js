@@ -101,34 +101,7 @@ function Compra(cantidad, producto, precio, totales){
         }
     }
  
-}
-
-var carritoCompra = new CarritoCompra();
-
-
-var compra = new Compra(1, "FotoAmérica1", 10 );
-compra.agrgarAlCarrito(carritoCompra);
-
-
-
-var compra2 = new Compra(2, "FotoAsia1", 11);
-compra2.agrgarAlCarrito(carritoCompra);
-
-
-var compra3 = new Compra(1, "FotoAfrica2", 9);
-compra3.agrgarAlCarrito(carritoCompra);
-
-
-var compra4 = new Compra(2, "FotoEuropa3", 8);
-compra4.agrgarAlCarrito(carritoCompra);
-
-
-var compra5 = new Compra(1, "FotoEuropa1", 12);
-compra5.agrgarAlCarrito(carritoCompra);
-
-console.log(carritoCompra.compra);
-console.log(totales);*/
-
+}*/
 
 //Formulario
 
@@ -164,13 +137,19 @@ function validarEnviar(){
     console.log($("#Mail").val());
 
 }
-        
-    /*window.onload = function() {
+
+
+//cambiar el color de botones 
+function validarInput(){
+    
+  $("#NombreApellido").css("border", "4px solid green"); 
+  $("#Mail").css("background", "lime"); 
+  $("#Comentario").css("boder", "4px solid violet")
+}
+     
+    window.onload = function() {
             document.getElementById("cambiaBorde").onmouseover = resalta;
             document.getElementById("cambiaBorde").onmouseout = resalta;
-        
-            document.getElementById('boton').addEventListener('click', cambiarColorContenedor);
-            document.getElementById('boton').addEventListener('click', cambiarColorBody);
             
             document.getElementById('cambiaBoton').onmouseover = resaltaColor;
             document.getElementById('cambiaBoton').onmouseout = resaltaColor;
@@ -181,41 +160,26 @@ function validarEnviar(){
             var evento = elEvento;
             switch(evento.type) {
               case 'mouseover':
-                this.style.borderColor = 'red';
+                this.style.borderColor = 'brown';
                 break;
               case 'mouseout':
-                this.style.borderColor = 'green';
+                this.style.borderColor = 'red';
                 break;
             }
           }
-        
-        function cambiarColorContenedor(evento){
-            evento.stopPropagation();
-            document.getElementById("contenedor").style.background ="violet";
-        }
-        
-        function cambiarColorBody(){
-            document.body.style.background = "salmon";
-
-        }
-
         
         function resaltaColor(elEvento) {
             var evento = elEvento;
             switch(evento.type) {
               case 'mouseover':
-                this.style.background = 'yellow';
+                this.style.background = 'violet';
                 break;
               case 'mouseout':
-                this.style.color = 'blue';
+                this.style.color = 'olive';
                 break;
             }
           }
         
-
-        
-        
-
 function contraseña(event){
     var value = event.target.value;
     if(value.length < 8){
@@ -231,4 +195,4 @@ function capturarEnter(event) {
     if (event.which == 13 || event.keyCode == 13) { 
  alert("A continuacion puedes terminar tu compra, Gracias por confiar en nosotros");        
      }
- }*/
+ }
