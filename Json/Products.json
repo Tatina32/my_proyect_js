@@ -1,0 +1,11 @@
+[
+    { "productId": 1,  "productName": "Serpiente de envoltorios", "productImage": "../img/serpienteRciclada.jpg",  "productPrice": 15}, 
+    { "productId": 2,  "productName": "Agenda de papel reciclado", "productImage": "../img/agendaPapel.jpg",  "productPrice": 10}, 
+    { "productId": 3,  "productName": "Platos de fibra de bambu ", "productImage": "../img/setPlato.jpg",  "productPrice": 8 },
+    { "productId": 4,  "productName": "Muñeca con piezas", "productImage": "../img/muñecaReciclada.jpg",  "productPrice": 11 }, 
+    { "productId": 5,  "productName": "Mariposa con piezas", "productImage": "../img/mariposaReciclado.jpg",  "productPrice": 10 }, 
+    { "productId": 6,  "productName": "Macetero hecho de envases", "productImage": "../img/maceteroReciclado.jpg",  "productPrice": 12},
+    { "productId": 7,  "productName": "Cuadro de piezas", "productImage": "../img/cuadroReciclado.jpg",  "productPrice": 9 }, 
+    { "productId": 8,  "productName": "Collar de vidio", "productImage": "../img/collarReciclado.jpg",  "productPrice": 14 }, 
+    { "productId": 9,  "productName": "Lapicero de disquet", "productImage": "../img/lapiceroReciclado.jpg",  "productPrice": 10}   
+]

@@ -1,76 +1,69 @@
 
- 
- var cart
+ var cart;
+ var valor = 0;
 
  if (localStorage.getItem('cart')) {
      cart = JSON.parse(localStorage.getItem('cart'))
  } else {
      cart = []
  }
- 
- 
- var productos = [
-     { "productId": 1,  "productName": "Serpiente de envoltorios", "productImage": "../img/serpienteRciclada.jpg",  "productPrice": 15}, 
-     { "productId": 2,  "productName": "Agenda de papel reciclado", "productImage": "../img/agendaPapel.jpg",  "productPrice": 10}, 
-     { "productId": 3,  "productName": "Platos de fibra de bambu ", "productImage": "../img/setPlato.jpg",  "productPrice": 8 },
-      { "productId": 4,  "productName": "Muñeca con piezas", "productImage": "../img/muñecaReciclada.jpg",  "productPrice": 11 }, 
-      { "productId": 5,  "productName": "Mariposa con piezas", "productImage": "../img/mariposaReciclado.jpg",  "productPrice": 10 }, 
-      { "productId": 6,  "productName": "Macetero hecho de envases", "productImage": "../img/maceteroReciclado.jpg",  "productPrice": 12},
-      { "productId": 7,  "productName": "Cuadro de piezas", "productImage": "../img/cuadroReciclado.jpg",  "productPrice": 9 }, 
-      { "productId": 8,  "productName": "Collar de vidio", "productImage": "../img/collarReciclado.jpg",  "productPrice": 14 }, 
-      { "productId": 9,  "productName": "Lapicero de disquet", "productImage": "../img/lapiceroReciclado.jpg",  "productPrice": 10}, 
-     
- ]
+
+ var productos
  
  var containerProduct = $('.productContainer')
+
+ fetch('../Json/Products.json').then(function (res) {
+     res.json().then(function (data) {
+        productos = data
+         productos.forEach(function (producto) {
+            containerProduct.append(`
+            <div class=" ${producto.productId} col-lg-4 col-md-6 col-xs-12  p-5 d-flex flex-column align-items-center justify-items-center aling-text-center">
+            
+                <h2 style="text-align: center">${producto.productName}</h2>
+                <img src=${producto.productImage}  width="250" height="250"> <br>
+                <p>Precio: $ ${producto.productPrice}</p>
+                <div style="display: flex; justify-content: space-between; ">
+                   <input type="button" id="${producto.productId}" onclick="Sumar('anadirProducts${producto.productId}')"  style="background: olivedrab; " value="+" class="btn-sm"/>
+                   <h4 id="anadirProducts">0</h4>
+                   <input type="button" id="${producto.productId}" onclick="Restar('anadirProducts${producto.productId}')" style="background: olivedrab; " class="btn-sm" value="-"/>
+                </div><br>
+               <button class="btnAdd btn-lg" style="border:2px; background: olivedrab;" id="${producto.productId}"> Agregar </button>
+            </div>
+            `)
+        })
+        
+         var btnAdd = $('.btnAdd')
+        
+         btnAdd.click(function (event) {
+             productos.forEach(function (producto) {
+                 if (producto.productId == $(event.target).attr('id')) {
+                     cart.push(producto)
+                     localStorage.setItem('cart', JSON.stringify(cart));
+                     console.log(cart);
+                     alert(productName + "----Ha sido agregado al carrito correctamente." )
+                 }
+             })
+         })
+       
+     })
+     })
  
- productos.forEach(function (producto) {
-     containerProduct.append(`
-     <div class=" ${producto.productId} col-lg-4 col-md-6 col-xs-12  p-5 d-flex flex-column align-items-center justify-items-center aling-text-center">
-     
-         <h2 style="text-align: center">${producto.productName}</h2>
-         <img src=${producto.productImage}  width="250" height="250"> <br>
-         <p>Precio: $ ${producto.productPrice}</p>
-         <div style="display: flex; justify-content: space-between; ">
-            <button onclick="Sumar()" style="background: olivedrab; " class="btn-sm">+</button>
-            <h4 id="contador">0</h4>
-            <button onclick="Restar()" style="background: olivedrab; " class="btn-sm">-</button>
-         </div><br>
-        <button class="btnAdd btn-lg" style="border:2px; background: olivedrab;" id="${producto.productId}"> Agregar </button>
-     </div>
-     `)
- })
- 
- var valor = 0;
+ //solo me suma en el primer producto 
 
  function Sumar(){
-     var sumar = document.getElementById("contador");
+     var sumar = document.getElementById("anadirProducts");
      valor++
      sumar.innerHTML = valor;
  }
  function Restar(){
-     if(document.getElementById("contador").innerText  !== '0'){
-         var restar = document.getElementById("contador");
+     if(document.getElementById("anadirProducts").innerText  !== '0'){
+         var restar = document.getElementById("anadirProducts");
          valor--
          restar.innerHTML = valor;
      }  
  }
 
- var btnAdd = $('.btnAdd')
- 
- btnAdd.click(function (e) {
-     productos.forEach(function (producto) {
-         if (producto.productId == $(e.target).attr('id')) {
-             cart.push(producto)
-             localStorage.setItem('cart', JSON.stringify(cart))
-             console.log(cart)
-             $(e.target).addClass('btnAgregado')
-         }
-     })
- })
-
- 
-var estado = false;
+var estado = false; 
 var intervalo;
 
 $( document ).ready(function(){

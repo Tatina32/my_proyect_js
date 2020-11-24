@@ -67,29 +67,8 @@ for(var c = 0; c < arrayContinente.length; c++){
 }
 
 
-function CarritoCompra(compra){
-    this.compra = []
-    this.totales = []
-   
-   
 
-    this.agregarCompra = function(compra) { 
-        this.compra.push(compra)
-       
-    }
-}
 
-function Compra(cantidad, producto, precio, totales){
-    this.cantidad = cantidad;
-    this.producto = producto;
-    this.precio = precio;
-    this.totales = totales;
-    
-
-    this.agrgarAlCarrito = function(carritoCompra) {
-        var compra = {Cantidad: this.cantidad, Producto: this.producto, Precio: this.precio, Totales: this.totales}
-        carritoCompra.agregarCompra(compra);
-    }
 
     this.imprimirTotales = function(carritoCompra){
         for(var i = 0; i < 4; i++){
@@ -98,10 +77,29 @@ function Compra(cantidad, producto, precio, totales){
             
             console.log(cantidad[i]+ '-' + producto[i] + ':' + precio[i] + '$' +'\nTotal de compra: $ ' + totales[i]);
            
-        }
-    }
- 
-}*/
+        }*/
+
+//mover immagen
+$().ready(() => {
+  $().keydown(e => {
+     const blob = $("#blob");
+     console.log(e.which);
+     switch(e.which){
+       case 37:
+         blob.animate({left:"60%"}, 1000);
+         break;
+       case 38:
+           blob.animate({bottom: "10%"}, 1000);
+         break;
+       case 39:
+         blob.animate({left: "50%"}, 1000);
+         break;
+       case 40:
+         blob.animate({bottom:"80%"}, 1000);
+         break;
+     }
+  })
+})
 
 //Formulario
 
@@ -178,7 +176,7 @@ function validarInput(){
             var evento = elEvento;
             switch(evento.type) {
               case 'mouseover':
-                this.style.background = 'violet';
+                this.style.background = 'silver';
                 break;
               case 'mouseout':
                 this.style.color = 'olive';

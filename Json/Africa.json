@@ -1,0 +1,61 @@
+[{
+    "productId": 1,
+    "productName": "Amanecer en el Desierto de Zagora <br>Marrakech",
+    "productPrice": 15,
+    "productImage": "../img/amanecerCamping.jpg"
+  }, {
+    "productId": 2,
+    "productName": "Música Marroquí<br>",
+    "productPrice": 10,
+    "productImage": "../img/musicaMarroqui.jpg"
+  }, {
+    "productId": 3,
+    "productName": "Domar Dromedario <br>Marrakech",
+    "productPrice": 12,
+    "productImage": "../img/arrearDromedarios.jpg"
+  }, {
+    "productId": 4,
+    "productName": "Dromedario <br>Marrakech ",
+    "productPrice": 13,
+    "productImage": "../img/dromedario-Marrakech.jpg"
+  }, {
+    "productId": 5,
+    "productName": " Faraón <br>Egipto",
+    "productPrice": 12,
+    "productImage": "../img/Expo-Egipto.jpg"
+  }, {
+    "productId": 6,
+    "productName": "Mural Egipcio <br>Egipto",
+    "productPrice": 10,
+    "productImage": "../img/mural-Egipto.jpg"
+  }, {
+    "productId": 7,
+    "productName": " Paseo en Dromedario <br>Marrakech",
+    "productPrice": 10,
+    "productImage": "../img/paseoDromedario.jpg"
+  }, {
+    "productId": 8,
+    "productName": " Pueblo de Zagora <br>Marrakech",
+    "productPrice": 10,
+    "productImage": "../img/puebloDeSahora.jpg"
+  }, {
+    "productId": 9,
+    "productName": " Tutankamon <br>Egipto",
+    "productPrice": 11,
+    "productImage": "../img/Tutankamon-Egipto.jpg"
+  }, {
+    "productId": 10,
+    "productName": " Pueblos escondidos <br>Marrakech",
+    "productPrice": 10,
+    "productImage": "../img/pueblosMarroquis.jpg"
+  }, {
+    "productId": 11,
+    "productName": "Arte <br>Marrakech",
+    "productPrice": 8,
+    "productImage": "../img/cuadrosMarroqui.jpg"
+  }, {
+    "productId": 12,
+    "productName": " Dromedario hambriento <br>Marrakech",
+    "productPrice": 9,
+    "productImage": "../img/BocaDromedario.jpg"
+  }]

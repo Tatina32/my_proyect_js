@@ -1,0 +1,14 @@
+[{
+    "productId": 1, "productName": "Continente Asiático <br> ", "productPrice": 15, "productImage": "../img/Banderas.JPG"}, 
+    {"productId": 2, "productName": "Blue Temple  <br> Thailandia", "productPrice": 10, "productImage": "../img/blueTemple.JPG"}, 
+    {"productId": 3, "productName": "Buda <br>  Thailandia", "productPrice": 12, "productImage": "../img/buda-Thailandia.JPG"}, 
+    {"productId": 4, "productName": "Elefantes <br> Thailandia ", "productPrice": 13, "productImage": "../img/caraElefante.JPG"}, 
+    {"productId": 5, "productName": "Decoraciones Thailandesa <br> ", "productPrice": 12, "productImage": "../img/decoracion-Thailandesa.JPG"}, 
+    {"productId": 6, "productName": "Elefantes en su hábitat <br> Thailandia ", "productPrice": 10, "productImage": "../img/elefanteEnEstadoPuro.JPG"}, 
+    {"productId": 7, "productName": "Isla Kho Thao <br> Thailandia", "productPrice": 10, "productImage": "../img/islaKhoThao-Thailandia.jpg"}, 
+    {"productId": 8, "productName": "Mujeres Jirafa <br> Thailandia", "productPrice": 10, "productImage": "../img/mujerJirafaThailandesa.JPG"}, 
+    {"productId": 9, "productName": "Jardines del Templo <br> Thailandia", "productPrice": 11, "productImage": "../img/PaisajeBudista.JPG"}, 
+    {"productId": 10, "productName": "Rezo Budista <br> Thailandia", "productPrice": 10,  "productImage": "../img/rezoBudista-Thailandia.JPG"}, 
+    {"productId": 11, "productName": "Templos <br> Thailandia", "productPrice": 8, "productImage": "../img/templo-Thailandia.JPG"}, 
+    {"productId": 12, "productName": "Tribu Thailandesa <br> ", "productPrice": 9, "productImage": "../img/tribuThailandesa.JPG"
+  }]
