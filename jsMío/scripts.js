@@ -140,6 +140,12 @@ function validarEnviar(){
 
 
 //cambiar el color de botones 
+$(".parrafo1").css({color:'green'});
+$(".parrafo2").css({color:'red'});
+$(".parrafo3").css({color:'yellow'});
+$(".parrafo4").css({color:'#659cef'});
+
+
 function validarInput(){
     
   $("#NombreApellido").css("border", "4px solid green"); 

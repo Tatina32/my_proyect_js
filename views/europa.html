@@ -163,23 +163,23 @@
             <form class="formulario">
               <div class="form-group">
                    <label for="nombreyapellido">Nombre y Apellido:</label>
-                   <input type="text" id="NombreApellido" onchange="ValidarNombreApellido(event)"  class="form-control" placeholder="*Juan Gomez">
+                   <input type="text" id="NombreApellido" onchange="ValidarNombreApellido(event)" onclick="validarInput()"  class="form-control" placeholder="*Juan Gomez">
               </div>
               <div class="form-group">
                    <label for="Mail">Mail:</label>
-                   <input type="email" id="Mail" onchange="ValidarMail(event)" class="form-control" id="Mail" aria-describedby="emailHelp" placeholder="*juan@gmail.com">
+                   <input type="email" id="Mail" onchange="ValidarMail(event)" onclick="validarInput()" class="form-control" id="Mail" aria-describedby="emailHelp" placeholder="*juan@gmail.com">
               </div>
               <div class="form-group">
                  <label for="pregunta">Comentario:</label>
-                 <input type="text" id="Comentario" onchange="ValidarComentario(event)" onkeypress="capturarEnterFormulario(event)"  class="form-control" placeholder="*Como funciona esta inicitiva benefica?">
+                 <input type="text" id="Comentario" onchange="ValidarComentario(event)" onclick="validarInput()" onkeypress="capturarEnterFormulario(event)"  class="form-control" placeholder="*Como funciona esta inicitiva benefica?">
               </div>
 
               <div class="form-group form-check">
                    <input type="checkbox" class="form-check-input" id="exampleCheck1"><br>
                    <label class="form-check-label" for="exampleCheck1">Acepto los términos y condiciones. Para obtener más información sobre el procedimiento de sus datos personales, visite la POLÍTICA DE PRIVACIDAD.</label>
               </div>
-               <button type="submit" class="btn" style="background: olivedrab;">Enviar</button>
-               <button type="reset" class="btn" style="background: olivedrab;" value="Limpiar formulario">Limpiar formulario</button>
+               <button type="submit" class="btn" id="cambiaBorde" style="background: olivedrab;">Enviar</button>
+               <button type="reset" class="btn" id="cambiaBoton" style="background: olivedrab;" value="Limpiar formulario">Limpiar formulario</button>
             </form>
               
           </div>         
@@ -208,7 +208,7 @@
  
   </footer>
 
-
+<script src="../jquery-3.5.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../jsBootstrap/bootstrap.bundle.js"></script></body>
       <script src="../jsMío/scripts.js"></script>
