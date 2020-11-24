@@ -22,8 +22,8 @@ var containerProduct = $('.productContainer')
                 <p>Precio: $ ${producto.productPrice}</p>
                 <div style="display: flex; justify-content: space-between; ">
                    <input type="button" onclick="alert('Haz seleccionado la primera opción !---- 1. Obtener un regalo de materiales reciclados.')" value="1" style="background: olivedrab; " class="btn-sm"/>
-                   <input type="button" onclick="alert('Haz seleccionado la primera opción !---- 2. Sembrar un árbol en una reserva ecológica.')" value="2" style="background: olivedrab; " class="btn-sm"/>
-                   <input type="button" onclick="alert('Haz seleccionado la primera opción !---- 3. Donarias alimentos para las personas que viven en la calle.')" value="3" style="background: olivedrab; " class="btn-sm"/>
+                   <input type="button" onclick="alert('Haz seleccionado la segunda  opción !---- 2. Sembrar un árbol en una reserva ecológica.')" value="2" style="background: olivedrab; " class="btn-sm"/>
+                   <input type="button" onclick="alert('Haz seleccionado la tercera  opción !---- 3. Donarias alimentos para las personas que viven en la calle.')" value="3" style="background: olivedrab; " class="btn-sm"/>
                 </div><br>
                <button class="btnAdd btn-lg" style="border:2px; background: olivedrab;" id="${producto.productId}"> Agregar </button>
             </div>
