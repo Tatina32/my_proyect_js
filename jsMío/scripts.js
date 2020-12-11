@@ -1,84 +1,3 @@
-/*
-//Encuenta para clientes 
-var encuesta =Number(prompt("¿Dinos el número de paises que has visitado en todo el Mundo?")) ;
-
-  switch (encuesta){
-    case 3:
-     
-        alert("Quizas deberias plantearte salir de tu zona de confort y VIAJAR, nunca es tarde para empezar.");
-     
-      
-      break;
-
-    case 8:
-     
-        alert ("Estas empezando un gran camino por recorer y muchas cosas por descubrir, ánimo y sigue VIAJANDO");
-     
-      
-      break;
-    
-    case 15:
-      
-        alert("Quizas deberias preocuparte ya que VIAJAR es adictivo, una ves que empiezas no puedes parar :)");
-      
-       
-       break;
-
-    case 20:
-      
-        alert("Es un número considerable y sé  que notaras la experiencia que llevas encima, la riqueza de tu conocimientos es inmejorable ");
-     
-        
-        break;
-
-    case 27:
-     
-        alert("Estas en un nivel que la pioridad de tu vida es buscar nuevos lugares y sin duda seguir sumando en paises visitados.\nEl dinero se recupera, pero el tiempo No.....VIAJA");
-     
-        
-        break;
-    
-    default:
-      alert("No acertaste con nuestras cifras de ejemplo, lo siento intentalo nuevamente!");
-       break;
-  }
-
-
-var continente1 = {continente: "America"};//los acentos no pilla
-var continente2 = {continente: "Africa"};
-var continente3 = {continente:"Asia"};
-var continente4 = {continente:"Europa"};
-
-var arrayContinente = [continente1, continente2, continente3, continente4];
-
-var promptContinente = prompt("Qué continente que has visitado te ha gustado más?");
-
-for(var c = 0; c < arrayContinente.length; c++){
-    
- //farma1
-    if(arrayContinente[c].continente.toLocaleLowerCase().indexOf(promptContinente.toLocaleLowerCase())){
-          alert('Gracias por contestar a nuestra encuenta,' + 'me alegro que hayas disfrutado de ' + promptContinente);
-    }
-
-   //forma2 
-    if(arrayContinente[c].continente.toLocaleLowerCase().includes(promptContinente.toLocaleLowerCase())){
-          alert('Gracias por contestar a nuestra encuenta,' + 'me alegro que hayas disfrutado de ' + promptContinente);
-  }
-}
-
-
-
-
-
-    this.imprimirTotales = function(carritoCompra){
-        for(var i = 0; i < 4; i++){
-            var totales = cantidad[i] * precio[i] ;
-            carritoCompra.imprimirTotales(totales);
-            
-            console.log(cantidad[i]+ '-' + producto[i] + ':' + precio[i] + '$' +'\nTotal de compra: $ ' + totales[i]);
-           
-        }*/
-
 //mover immagen
 $().ready(() => {
   $().keydown(e => {
@@ -183,20 +102,97 @@ function validarInput(){
                 break;
             }
           }
-        
-function contraseña(event){
-    var value = event.target.value;
-    if(value.length < 8){
-        var p = document.createElement('p');
-        var main = document.getElementById('main');
-        p.innerHTML = 'Ingresar una contraseña de mas de 8 caracteres';
-        main.appendChild(p);
-        console.log(p)
-    }
-}
+          
 
-function capturarEnter(event) {
-    if (event.which == 13 || event.keyCode == 13) { 
- alert("A continuacion puedes terminar tu compra, Gracias por confiar en nosotros");        
-     }
- }
+ //Encuestas
+
+ function Encuestas(){
+  var encuesta =Number(prompt("¿Dinos el número de paises que has visitado en todo el Mundo?")) ;
+
+  switch (encuesta){
+    case 3:
+     
+        alert("Quizas deberias plantearte salir de tu zona de confort y VIAJAR, nunca es tarde para empezar.");
+     
+      
+      break;
+
+    case 8:
+     
+        alert ("Estas empezando un gran camino por recorer y muchas cosas por descubrir, ánimo y sigue VIAJANDO");
+     
+      
+      break;
+    
+    case 15:
+      
+        alert("Quizas deberias preocuparte ya que VIAJAR es adictivo, una ves que empiezas no puedes parar :)");
+      
+       
+       break;
+
+    case 20:
+      
+        alert("Es un número considerable y sé  que notaras la experiencia que llevas encima, la riqueza de tu conocimientos es inmejorable ");
+     
+        
+        break;
+
+    case 27:
+     
+        alert("Estas en un nivel que la pioridad de tu vida es buscar nuevos lugares y sin duda seguir sumando en paises visitados.\nEl dinero se recupera, pero el tiempo No.....VIAJA");
+     
+        
+        break;
+    
+    default:
+      alert("No acertaste con nuestras cifras de ejemplo, lo siento intentalo nuevamente!");
+       break;
+  };
+
+ }; 
+
+ /*
+ //Encuenta para clientes 
+
+var continente1 = {continente: "America"};//los acentos no pilla
+var continente2 = {continente: "Africa"};
+var continente3 = {continente:"Asia"};
+var continente4 = {continente:"Europa"};
+
+var arrayContinente = [continente1, continente2, continente3, continente4];
+
+var promptContinente = prompt("Qué continente que has visitado te ha gustado más?");
+
+for(var c = 0; c < arrayContinente.length; c++){
+    
+ //farma1
+    if(arrayContinente[c].continente.toLocaleLowerCase().indexOf(promptContinente.toLocaleLowerCase())){
+          alert('Gracias por contestar a nuestra encuenta,' + 'me alegro que hayas disfrutado de ' + promptContinente);
+    }
+
+   //forma2 
+    if(arrayContinente[c].continente.toLocaleLowerCase().includes(promptContinente.toLocaleLowerCase())){
+          alert('Gracias por contestar a nuestra encuenta,' + 'me alegro que hayas disfrutado de ' + promptContinente);
+  }
+}*/
+
+
+
+  function ValidarUsuario(evento){
+    var inputUsuario = evento.target.value;
+    if(inputUsuario.length < 8){
+        console.log("El nombre de usuario debe tener al menos 8 caracteres");
+    } else console.log("Perfecto!");
+    }
+    
+function ValidarContrasena(evento){
+        var inputContrasena = evento.target.value;
+        if(inputContrasena.length < 8){
+            console.log("La contrasena debe tener al menos 8 caracteres");
+        } else console.log("Perfecto!");
+        }
+
+
+
+ 

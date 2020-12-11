@@ -25,7 +25,7 @@ var containerProduct = $('.productContainer')
                    <input type="button" onclick="alert('Haz seleccionado la segunda  opción !---- 2. Sembrar un árbol en una reserva ecológica.')" value="2" style="background: olivedrab; " class="btn-sm"/>
                    <input type="button" onclick="alert('Haz seleccionado la tercera  opción !---- 3. Donarias alimentos para las personas que viven en la calle.')" value="3" style="background: olivedrab; " class="btn-sm"/>
                 </div><br>
-               <button class="btnAdd btn-lg" style="border:2px; background: olivedrab;" id="${producto.productId}"> Agregar </button>
+               <button class="btnAdd btn-lg" onclick="alert('Ha sido agregado al carrito correctamente.  Gracias por confiar en nosotros.')" style="border:2px; background: olivedrab;" id="${producto.productId}"> Agregar </button>
             </div>
             `)
         })

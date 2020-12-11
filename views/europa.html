@@ -38,7 +38,7 @@
 
   <body>
   
-  <header>
+  <header id="top">
   <div class="collapse bg-dark" id="navbarHeader">
     <div class="container">
       <div class="row">
@@ -119,28 +119,24 @@
    
   </div>
 
-  <hr>
+  
   <div id="barraBaja">
-    <strong>Síguenos :</strong> 
-    <a href=""> <img class=" redes--redesSociales" src="../img/Facebook.png" alt="acceso perfil de facebook"  ></a> 
-    <a href=""><img class=" redes--redesSociales" src="../img/instagram.png" alt=" accesoperfil de instagram" ></a> 
+    <strong></strong> 
+    <a href="https://www.facebook.com/tatiana.ricachi" target="_blank"> <img class=" redes--redesSociales" src="../img/Facebook.png" alt="acceso perfil de facebook"  ></a> 
+    <a href="https://www.instagram.com/tatty_trotamundos/" target="_blank"><img class=" redes--redesSociales" src="../img/instagram.png" alt=" accesoperfil de instagram" ></a> 
     <a href=""><img class=" redes--redesSociales"  src="../img/whatssap.png" alt="aceso perfil de whatssap"  ></a>
-    <a href="" class="rounded float-right"><svg width="2em" height="2em" viewBox="0 0 16 16"  class="bi bi-person-square" fill="olivedrab"  xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-      <path fill-rule="evenodd" d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-    </svg></a>
-    <a href="" class="rounded float-right"><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-chat-square-text-fill" fill="olivedrab" xmlns="http://www.w3.org/2000/svg">
+    
+    <button  onclick="Encuestas()" style="background: rgb(195, 240, 178);" class="rounded float-right"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-square-text-fill" fill="olivedrab" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z"/>
-    </svg></a>
+    </svg></button>
   </div>
   
-  
+  <br>
   <footer class=""> 
-
     <div class="row pieDePagina"><!---inicio row--->
-      
+      <h3 style="text-align: center;" id="contacto">CONTACTO</h3> 
       <div class="col-lg-5 col-md-12 col-xs-12  ">
-             <h3 style="text-align: center;" id="contacto">Contacto</h3> <br>
+        <h4  style="text-align: center;">Dirección</h4><br>    
               <address>
                 <strong><svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-geo-alt-fill" fill="olive"  xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -159,7 +155,7 @@
       </div>
 <br>
           <div class=" col-lg-7 col-md-12 col-xs-12  " >
-              
+            <h4  style="text-align: center;">Formulario</h4>  
             <form class="formulario">
               <div class="form-group">
                    <label for="nombreyapellido">Nombre y Apellido:</label>
@@ -175,7 +171,7 @@
               </div>
 
               <div class="form-group form-check">
-                   <input type="checkbox" class="form-check-input" id="exampleCheck1"><br>
+                   <input type="checkbox" class="form-check-input" id="exampleCheck1">
                    <label class="form-check-label" for="exampleCheck1">Acepto los términos y condiciones. Para obtener más información sobre el procedimiento de sus datos personales, visite la POLÍTICA DE PRIVACIDAD.</label>
               </div>
                <button type="submit" class="btn" id="cambiaBorde" style="background: olivedrab;">Enviar</button>
@@ -185,14 +181,15 @@
           </div>         
   
     </div><!----fin row---------->
-    <hr class="featurette-divider">
+    <br>
       <div class="row" style="text-align: center;">
         <div class="col-lg-12 col-md-12 col-xs-12">
-          <h2>Fundadora</h2>
+          <h2>EQUIPO</h2>
           <img src="../img/yo.jpg" width="200" height="200" alt="" style="border-radius: 50%;">
           <br>
           <br>
-          <p>Tatiana Ricachi</p>
+          <p><strong>Tatiana L. Ricachi B.</strong></p>
+          <p>Fundadora</p>
           <a href="https://www.linkedin.com/in/tatiana-lisbeth-ricachi-ben%C3%ADtez-37882410b/" target="_blank"><img src="../img/linkedin.png" width="40" height="40" alt=""></a>
         </div>
       </div>
