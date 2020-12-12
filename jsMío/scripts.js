@@ -1,25 +1,3 @@
-//mover immagen
-$().ready(() => {
-  $().keydown(e => {
-     const blob = $("#blob");
-     console.log(e.which);
-     switch(e.which){
-       case 37:
-         blob.animate({left:"60%"}, 1000);
-         break;
-       case 38:
-           blob.animate({bottom: "10%"}, 1000);
-         break;
-       case 39:
-         blob.animate({left: "50%"}, 1000);
-         break;
-       case 40:
-         blob.animate({bottom:"80%"}, 1000);
-         break;
-     }
-  })
-})
-
 //Formulario
 
 function ValidarNombreApellido(evento){
@@ -179,20 +157,7 @@ for(var c = 0; c < arrayContinente.length; c++){
 
 
 
-  function ValidarUsuario(evento){
-    var inputUsuario = evento.target.value;
-    if(inputUsuario.length < 8){
-        console.log("El nombre de usuario debe tener al menos 8 caracteres");
-    } else console.log("Perfecto!");
-    }
-    
-function ValidarContrasena(evento){
-        var inputContrasena = evento.target.value;
-        if(inputContrasena.length < 8){
-            console.log("La contrasena debe tener al menos 8 caracteres");
-        } else console.log("Perfecto!");
-        }
-
+  
 
 
  

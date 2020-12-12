@@ -23,15 +23,7 @@
                 <img src=${producto.productImage}  width="250" height="250"> <br>
                 <p>Precio: $ ${producto.productPrice}</p>
                 <div style="display: flex; justify-content: space-between; ">
-                  <form class="form-inline">
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                       <option selected>0</option>
-                       <option value="1">1</option>
-                       <option value="1">2</option>
-                       <option value="2">3</option>
-                       <option value="3">4</option>
-                     </select>
-                 </form> 
+      
                 </div><br>
                <button class="btnAdd botonAgregar btn-lg" onclick="alert('Ha sido agregado al carrito correctamente.  Gracias por confiar en nosotros.')" style="border:2px; background: olivedrab;" id="${producto.productId}"> Agregar </button>
             </div>
@@ -46,8 +38,7 @@
                  if (producto.productId == $(event.target).attr('id')) {
                      cart.push(producto)
                      localStorage.setItem('cart', JSON.stringify(cart));
-                     console.log(cart);
-                     //alert(productName + "----Ha sido agregado al carrito correctamente.");   
+                     console.log(cart);  
                  }
              });
             
@@ -94,7 +85,9 @@ function validarInput(){
     $("#mail").css("background", "lime"); 
 }
 
-/*   function contadorProduct () {
+
+
+  /* function contadorProduct () {
         alert(prompt[`
         <div>
         
@@ -102,10 +95,11 @@ function validarInput(){
                    <h4 id="anadirProducts">0</h4>
                    <input type="button" id="${producto.productId}" onclick="Restar('anadirProducts${producto.productId}')" style="background: olivedrab; " class="btn-sm" value="-"/>
         </div>
-   `]);     
+   `]);  
+       
      }
 
-     function Sumar(){
+    function Sumar(){
      var sumar = document.getElementById("anadirProducts");
      valor++
      sumar.innerHTML = valor;
@@ -116,8 +110,6 @@ function validarInput(){
          valor--
          restar.innerHTML = valor;
      }  
- }*/
-
-
-
+ }
+*/
  
